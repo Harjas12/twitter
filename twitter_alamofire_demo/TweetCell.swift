@@ -45,6 +45,9 @@ class TweetCell: UITableViewCell {
             UIApplication.shared.open(url)
         }
         tweetTextLabel.urlMaximumLength = 30
+        self.preservesSuperviewLayoutMargins = false
+        self.separatorInset = UIEdgeInsets.zero
+        self.layoutMargins = UIEdgeInsets.zero
     }
     func resetCellValues() {
         tweetTextLabel.text = tweet.text

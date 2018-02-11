@@ -89,7 +89,7 @@ class APIManager: SessionManager {
 //            completion(tweets, nil)
 //            return
 //        }
-        var paramaters: [String: Int64] = ["count": 200]
+        var paramaters: [String: Int64] = ["count": 20]
         if maxId >= 0 {
             paramaters["max_id"] = maxId
         }

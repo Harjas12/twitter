@@ -23,29 +23,47 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.insertSubview(refreshControl, at: 0)
         
-        refreshControl.addTarget(self, action: #selector(getInformation), for: UIControlEvents.valueChanged)
+        refreshControl.addTarget(self, action: #selector(getNewTweets), for: UIControlEvents.valueChanged)
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
         
-        getInformation()
+        getInformation(loadNew: true)
     }
-    func getInformation() {
+    func getNewTweets() {
+        getInformation(loadNew: true)
+    }
+    func getInformation(loadNew: Bool) {
+        if loadNew {
+             maxID = -1
+        }
         APIManager.shared.getHomeTimeLine(maxId: maxID, completion: { (tweets, error) in
             if let tweets = tweets {
-                self.tweets = tweets
+                if loadNew {
+                    self.tweets = tweets
+                } else {
+                    self.tweets.append(contentsOf: tweets)
+                }
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
-                self.maxID = tweets[tweets.count - 1].id - 1
             } else if let error = error {
                 print("Error getting home timeline: " + error.localizedDescription)
             }
         })
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        if indexPath.row == tweets.count - 1 {
-//            getInformation()
-//        }
+        if indexPath.row == tweets.count - 1 {
+            if tweets.count > 0 {
+                var lowestTweetID: Int64 = tweets[0].id
+                for tweet in tweets {
+                    if tweet.id < lowestTweetID {
+                        lowestTweetID = tweet.id
+                    }
+                }
+                maxID = lowestTweetID - 1
+                getInformation(loadNew: false)
+            }
+        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweets.count

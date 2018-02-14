@@ -34,7 +34,7 @@ class Tweet {
             self.retweetedByUser = User(dictionary: userDictionary)
             
             dictionary = originalTweet
-            
+            dictionary["full_text"] = "RT @" + (userDictionary["screen_name"] as! String) + "\n" + (dictionary["full_text"] as! String)
         }
         
         id = dictionary["id"] as! Int64

@@ -28,7 +28,7 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
     }
     func textViewDidChange(_ textView: UITextView) {
         let characterCount = newTweetTextView.text.count
-        characterCountLabel.text = "\(characterCount)/280"
+        characterCountLabel.text = "\(280 - characterCount)"
         if characterCount > 280 {
             characterCountLabel.textColor = UIColor.red
         } else {

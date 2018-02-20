@@ -12,6 +12,12 @@ class User {
     
     var name: String
     var screenName: String
+    var followers: Int
+    var tweetCount: Int
+    var following: Int
+    var profileImageUrl: URL
+    var tagline: String
+    var profileBackgroundUrl: URL?
     private static var _current: User?
     static var current: User? {
         get {
@@ -41,5 +47,13 @@ class User {
         self.dictionary = dictionary
         name = dictionary["name"] as! String
         screenName = dictionary["screen_name"] as! String
+        followers = dictionary["followers_count"] as! Int
+        following = dictionary["friends_count"] as! Int
+        profileImageUrl = URL(string: dictionary["profile_image_url_https"] as! String)!
+        tweetCount = dictionary["statuses_count"] as! Int
+        tagline = dictionary["description"] as! String
+        if let url = dictionary["profile_banner_url"] as? String {
+            profileBackgroundUrl = URL(string: url)!
+        }
     }
 }

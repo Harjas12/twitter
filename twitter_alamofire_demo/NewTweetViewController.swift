@@ -12,12 +12,19 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var newTweetTextView: UITextView!
     @IBOutlet weak var characterCountLabel: UILabel!
     
+    var replyTo: String?
+    var replyToId: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         newTweetTextView.delegate = self
         newTweetTextView.becomeFirstResponder()
         characterCountLabel.textColor = UIColor.green
+        if let replyTo = replyTo {
+            newTweetTextView.text = replyTo
+        }
+        textViewDidChange(newTweetTextView)
     }
     func textViewDidChange(_ textView: UITextView) {
         let characterCount = newTweetTextView.text.count
@@ -35,12 +42,25 @@ class NewTweetViewController: UIViewController, UITextViewDelegate {
     @IBAction func tweetButtonPressed(_ sender: Any) {
         let characterCount = newTweetTextView.text.count
         if characterCount > 0 && characterCount <= 280  {
-            APIManager.shared.sendTweet(newTweetTextView.text) { (tweet: Tweet?, error: Error?) in
-                if tweet != nil  {
-                    print("tweet sent succesfully")
-                    self.dismiss(animated: true, completion: nil)
-                } else if error != nil  {
-                    print("tweet failed to send")
+            if let replyId = replyToId {
+                APIManager.shared.sendTweet(isReply: true, replyId: replyId, newTweetTextView.text) { (tweet: Tweet?, error: Error?) in
+                    if tweet != nil  {
+                        print("tweet sent succesfully")
+                        self.view.endEditing(true)
+                        self.dismiss(animated: true, completion: nil)
+                    } else if error != nil  {
+                        print("tweet failed to send")
+                    }
+                }
+            } else {
+                APIManager.shared.sendTweet(isReply: false, replyId: nil, newTweetTextView.text) { (tweet: Tweet?, error: Error?) in
+                    if tweet != nil  {
+                        print("tweet sent succesfully")
+                        self.view.endEditing(true)
+                        self.dismiss(animated: true, completion: nil)
+                    } else if error != nil  {
+                        print("tweet failed to send")
+                    }
                 }
             }
         }

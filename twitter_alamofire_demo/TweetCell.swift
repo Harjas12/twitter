@@ -25,7 +25,6 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var timeAgoLabel: UILabel!
     
     let hapticFeedback = UIImpactFeedbackGenerator()
-    let twitterBlue = UIColor(red:0.11, green:0.63, blue:0.95, alpha:1.0)
     
     var tweet: Tweet! {
         didSet {
@@ -38,9 +37,9 @@ class TweetCell: UITableViewCell {
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
         profileImageView.clipsToBounds = true
         tweetTextLabel.enabledTypes = [.mention, .hashtag, .url]
-        tweetTextLabel.URLColor = twitterBlue
-        tweetTextLabel.mentionColor = twitterBlue
-        tweetTextLabel.hashtagColor = twitterBlue
+        tweetTextLabel.URLColor = UIColor.twitterBlueColor()
+        tweetTextLabel.mentionColor = UIColor.twitterBlueColor()
+        tweetTextLabel.hashtagColor = UIColor.twitterBlueColor()
         tweetTextLabel.handleURLTap { (url: URL) in
             UIApplication.shared.open(url)
         }

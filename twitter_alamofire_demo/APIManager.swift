@@ -94,7 +94,6 @@ class APIManager: SessionManager {
             paramaters["max_id"] = maxId
         }
         let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json?tweet_mode=extended")!
-//        request(URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json?tweet_mode=extended")!, method: .get, paramters: ["count": count], encoding: URLEncoding.queryString)
             request(url, method: .get, parameters: paramaters, encoding: URLEncoding.queryString).validate().responseJSON { (response) in
                 switch response.result {
                 case .failure(let error):
@@ -186,9 +185,14 @@ class APIManager: SessionManager {
     
     // MARK: TODO: Compose Tweet
     
-    func sendTweet(_ tweet: String, completion: @escaping (Tweet?, Error?) -> ()) {
+    func sendTweet(isReply: Bool, replyId: String?, _ tweet: String, completion: @escaping (Tweet?, Error?) -> ()) {
         let urlString = "https://api.twitter.com/1.1/statuses/update.json?tweet_mode=extended"
-        let paramaters = ["status": tweet]
+        let paramaters: [String: String]
+        if isReply{
+            paramaters = ["status": tweet, "in_reply_to_status_id" : replyId!]
+        } else {
+            paramaters = ["status": tweet]
+        }
         request(urlString, method: .post, parameters: paramaters, encoding: URLEncoding.queryString).validate().responseJSON { (response) in
             if response.result.isSuccess,
                 let tweetDictionary = response.result.value as? [String: Any] {
@@ -199,6 +203,8 @@ class APIManager: SessionManager {
             }
         }
     }
+    
+    
     
     // MARK: TODO: Get User Timeline
     

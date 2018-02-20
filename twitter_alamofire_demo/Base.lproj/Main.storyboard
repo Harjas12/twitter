@@ -323,10 +323,9 @@
                             <constraint firstItem="0fi-Rp-k5w" firstAttribute="leading" secondItem="0tH-fE-brR" secondAttribute="leading" id="285-KT-mFg"/>
                             <constraint firstItem="XDq-YU-K8N" firstAttribute="leading" secondItem="0tH-fE-brR" secondAttribute="leading" id="48h-fX-w6p"/>
                             <constraint firstItem="QSg-Fz-6Qo" firstAttribute="top" secondItem="wq8-8M-AsV" secondAttribute="bottom" constant="14" id="7MK-da-2af"/>
-                            <constraint firstItem="QSg-Fz-6Qo" firstAttribute="leading" secondItem="Ovt-yo-shq" secondAttribute="leading" constant="16" id="CQx-y0-95b"/>
                             <constraint firstItem="LK3-z1-frM" firstAttribute="top" secondItem="pGk-Ul-uFd" secondAttribute="bottom" constant="19" id="CjV-BG-LFX"/>
                             <constraint firstItem="0tH-fE-brR" firstAttribute="leading" secondItem="QSg-Fz-6Qo" secondAttribute="trailing" constant="8" id="DQe-eg-YVc"/>
-                            <constraint firstItem="pGk-Ul-uFd" firstAttribute="leading" secondItem="Ovt-yo-shq" secondAttribute="leading" constant="16" id="Dt2-KN-WGc"/>
+                            <constraint firstItem="pGk-Ul-uFd" firstAttribute="leading" secondItem="QSg-Fz-6Qo" secondAttribute="leading" id="FKs-LA-LL5"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0fi-Rp-k5w" secondAttribute="trailing" constant="8" id="HHu-0F-1ae"/>
                             <constraint firstItem="cIW-Fp-WdZ" firstAttribute="top" secondItem="pGk-Ul-uFd" secondAttribute="bottom" constant="9" id="K5X-mF-ipf"/>
                             <constraint firstItem="LK3-z1-frM" firstAttribute="leading" secondItem="QET-Uf-eft" secondAttribute="trailing" constant="3" id="L83-pt-TPK"/>
@@ -334,11 +333,12 @@
                             <constraint firstItem="msg-Wq-cCr" firstAttribute="top" secondItem="pGk-Ul-uFd" secondAttribute="bottom" constant="8" id="RE0-EO-xhE"/>
                             <constraint firstAttribute="trailing" secondItem="pGk-Ul-uFd" secondAttribute="trailing" constant="16" id="eGa-Ss-8Ol"/>
                             <constraint firstItem="pGk-Ul-uFd" firstAttribute="top" secondItem="XDq-YU-K8N" secondAttribute="bottom" constant="17" id="fws-PS-i64"/>
+                            <constraint firstItem="msg-Wq-cCr" firstAttribute="leading" secondItem="QSg-Fz-6Qo" secondAttribute="leading" id="g2e-5e-sBj"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XDq-YU-K8N" secondAttribute="trailing" constant="8" id="kuh-OH-Gof"/>
                             <constraint firstItem="0fi-Rp-k5w" firstAttribute="top" secondItem="0tH-fE-brR" secondAttribute="bottom" constant="8" id="lK1-P9-yMS"/>
-                            <constraint firstItem="msg-Wq-cCr" firstAttribute="leading" secondItem="Ovt-yo-shq" secondAttribute="leading" constant="16" id="m73-tX-Cs4"/>
                             <constraint firstItem="QET-Uf-eft" firstAttribute="top" secondItem="pGk-Ul-uFd" secondAttribute="bottom" constant="9" id="mXy-KY-r8V"/>
                             <constraint firstItem="cIW-Fp-WdZ" firstAttribute="leading" secondItem="LK3-z1-frM" secondAttribute="trailing" constant="3" id="moh-Jk-mn3"/>
+                            <constraint firstItem="QSg-Fz-6Qo" firstAttribute="leading" secondItem="Ovt-yo-shq" secondAttribute="leadingMargin" id="nq7-yl-yz4"/>
                             <constraint firstItem="XDq-YU-K8N" firstAttribute="top" secondItem="0fi-Rp-k5w" secondAttribute="bottom" constant="8" id="pia-mv-9aF"/>
                             <constraint firstItem="0tH-fE-brR" firstAttribute="top" secondItem="wq8-8M-AsV" secondAttribute="bottom" constant="12" id="qaw-UH-oWf"/>
                             <constraint firstItem="ehg-IK-dy3" firstAttribute="leading" secondItem="msg-Wq-cCr" secondAttribute="trailing" constant="8" id="xUf-ER-c0I"/>
@@ -626,6 +626,6 @@
         <image name="retweet-icon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kFz-lb-k7Q"/>
+        <segue reference="ZM9-wO-Mdh"/>
     </inferredMetricsTieBreakers>
 </document>

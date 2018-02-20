@@ -73,7 +73,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="144" id="U1g-kw-izy" customClass="TweetCell" customModule="twitter_alamofire_demo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="144" id="U1g-kw-izy" customClass="TweetCell" customModule="twitter_alamofire_demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="144"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U1g-kw-izy" id="zd2-Er-659">
@@ -106,7 +106,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MA0-3q-vK2">
-                                                    <rect key="frame" x="154" y="114" width="30" height="30"/>
+                                                    <rect key="frame" x="154" y="112.5" width="30" height="30"/>
                                                     <state key="normal" image="retweet-icon"/>
                                                     <connections>
                                                         <action selector="retweenButtonPressed:" destination="U1g-kw-izy" eventType="touchUpInside" id="OpK-CO-lK7"/>
@@ -120,18 +120,15 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="UDs-Ze-UlK">
-                                                    <rect key="frame" x="185" y="122" width="40" height="12"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="Jhb-9D-yGG"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="185" y="121.5" width="6.5" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zik-qs-NFE">
-                                                    <rect key="frame" x="111" y="122" width="40" height="12"/>
+                                                    <rect key="frame" x="111" y="121.5" width="40" height="12"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="dz3-F2-1kL"/>
+                                                        <constraint firstAttribute="width" constant="40" id="hjF-H7-sfH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -146,13 +143,14 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="VLZ-Nt-856" firstAttribute="leading" secondItem="STl-Cm-zwX" secondAttribute="leading" id="0QA-b8-Pv9"/>
-                                                <constraint firstItem="MA0-3q-vK2" firstAttribute="top" secondItem="epC-Fs-Q5Z" secondAttribute="bottom" constant="23" id="18R-Mb-sWX"/>
+                                                <constraint firstItem="Zik-qs-NFE" firstAttribute="leading" secondItem="CKH-5x-f3A" secondAttribute="trailing" constant="1" id="2KH-7A-lky"/>
                                                 <constraint firstItem="VLZ-Nt-856" firstAttribute="leading" secondItem="STl-Cm-zwX" secondAttribute="leading" id="36R-Rl-tIv"/>
-                                                <constraint firstItem="CKH-5x-f3A" firstAttribute="top" secondItem="epC-Fs-Q5Z" secondAttribute="bottom" constant="20" id="99K-Pf-UA3"/>
-                                                <constraint firstItem="MA0-3q-vK2" firstAttribute="leading" secondItem="Zik-qs-NFE" secondAttribute="trailing" constant="3" id="99U-uN-cj7"/>
+                                                <constraint firstItem="MA0-3q-vK2" firstAttribute="centerY" secondItem="CKH-5x-f3A" secondAttribute="centerY" multiplier="1.01" id="4Kv-3g-gql"/>
+                                                <constraint firstItem="MA0-3q-vK2" firstAttribute="leading" secondItem="Zik-qs-NFE" secondAttribute="trailing" constant="3" id="5GW-pS-IuX"/>
                                                 <constraint firstItem="epC-Fs-Q5Z" firstAttribute="leading" secondItem="STl-Cm-zwX" secondAttribute="leading" id="CMa-z8-4hD"/>
-                                                <constraint firstItem="CKH-5x-f3A" firstAttribute="leading" secondItem="STl-Cm-zwX" secondAttribute="leading" id="F86-l6-f0z"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UDs-Ze-UlK" secondAttribute="trailing" constant="8" id="HEP-Ow-r3m"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UDs-Ze-UlK" secondAttribute="trailing" constant="8" id="FBd-KV-Pfy"/>
+                                                <constraint firstItem="Zik-qs-NFE" firstAttribute="centerY" secondItem="CKH-5x-f3A" secondAttribute="centerY" multiplier="1.01" id="G10-81-cAJ"/>
+                                                <constraint firstItem="UDs-Ze-UlK" firstAttribute="leading" secondItem="MA0-3q-vK2" secondAttribute="trailing" constant="1" id="GxU-aW-Zv4"/>
                                                 <constraint firstItem="VLZ-Nt-856" firstAttribute="top" secondItem="STl-Cm-zwX" secondAttribute="bottom" constant="2" id="HcI-3V-hEb"/>
                                                 <constraint firstItem="VLZ-Nt-856" firstAttribute="leading" secondItem="STl-Cm-zwX" secondAttribute="leading" id="IFh-kT-MSc"/>
                                                 <constraint firstItem="STl-Cm-zwX" firstAttribute="leading" secondItem="p0Q-ft-nBz" secondAttribute="trailing" constant="17" id="Iah-65-YVi"/>
@@ -160,21 +158,22 @@
                                                 <constraint firstItem="STl-Cm-zwX" firstAttribute="top" secondItem="zd2-Er-659" secondAttribute="top" constant="11" id="Ll7-Ry-Dhp"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VLZ-Nt-856" secondAttribute="trailing" constant="20" id="NGe-kf-Gbj"/>
                                                 <constraint firstItem="IAA-hh-QXZ" firstAttribute="leading" secondItem="STl-Cm-zwX" secondAttribute="leading" id="O2G-S0-GbA"/>
-                                                <constraint firstItem="Zik-qs-NFE" firstAttribute="top" secondItem="epC-Fs-Q5Z" secondAttribute="bottom" constant="31" id="Qqn-o1-Zs6"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="p0Q-ft-nBz" secondAttribute="bottom" constant="8" id="Qzv-WO-eLR"/>
                                                 <constraint firstItem="epC-Fs-Q5Z" firstAttribute="leading" secondItem="STl-Cm-zwX" secondAttribute="leading" id="Ria-cc-H0B"/>
                                                 <constraint firstItem="p0Q-ft-nBz" firstAttribute="leading" secondItem="zd2-Er-659" secondAttribute="leading" constant="15" id="S6h-J9-rLO"/>
-                                                <constraint firstItem="UDs-Ze-UlK" firstAttribute="leading" secondItem="MA0-3q-vK2" secondAttribute="trailing" constant="1" id="Ziq-O2-gdZ"/>
+                                                <constraint firstItem="CKH-5x-f3A" firstAttribute="leading" secondItem="epC-Fs-Q5Z" secondAttribute="leading" id="XCq-7j-ucJ"/>
+                                                <constraint firstItem="UDs-Ze-UlK" firstAttribute="centerY" secondItem="CKH-5x-f3A" secondAttribute="centerY" multiplier="1.01" id="YbP-bw-3ZG"/>
+                                                <constraint firstItem="UDs-Ze-UlK" firstAttribute="leading" secondItem="MA0-3q-vK2" secondAttribute="trailing" constant="1" id="aqf-CH-Yd5"/>
+                                                <constraint firstItem="MA0-3q-vK2" firstAttribute="leading" secondItem="Zik-qs-NFE" secondAttribute="trailing" constant="3" id="bFZ-Yb-9Wy"/>
                                                 <constraint firstItem="epC-Fs-Q5Z" firstAttribute="leading" secondItem="STl-Cm-zwX" secondAttribute="leading" id="bNG-Jw-xQZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="CKH-5x-f3A" secondAttribute="bottom" constant="2.5" id="ddc-GV-Pyr"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="STl-Cm-zwX" secondAttribute="trailing" constant="20" id="dg2-QZ-2Kf"/>
-                                                <constraint firstItem="Zik-qs-NFE" firstAttribute="leading" secondItem="CKH-5x-f3A" secondAttribute="trailing" constant="1" id="elj-KI-pLg"/>
                                                 <constraint firstItem="VLZ-Nt-856" firstAttribute="leading" secondItem="STl-Cm-zwX" secondAttribute="leading" id="j29-3s-txV"/>
-                                                <constraint firstItem="UDs-Ze-UlK" firstAttribute="top" secondItem="epC-Fs-Q5Z" secondAttribute="bottom" constant="31" id="j4x-aF-n0A"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IAA-hh-QXZ" secondAttribute="trailing" constant="8" id="kvG-Dj-uM9"/>
                                                 <constraint firstItem="epC-Fs-Q5Z" firstAttribute="top" secondItem="IAA-hh-QXZ" secondAttribute="bottom" constant="3" id="lhl-QV-RQK"/>
                                                 <constraint firstItem="IAA-hh-QXZ" firstAttribute="top" secondItem="VLZ-Nt-856" secondAttribute="bottom" constant="1" id="mLw-qb-Vx5"/>
                                                 <constraint firstItem="p0Q-ft-nBz" firstAttribute="top" secondItem="zd2-Er-659" secondAttribute="top" constant="11" id="pOy-1f-r2N"/>
-                                                <constraint firstAttribute="bottom" secondItem="CKH-5x-f3A" secondAttribute="bottom" constant="2.5" id="rsk-nV-nlu"/>
+                                                <constraint firstItem="CKH-5x-f3A" firstAttribute="top" relation="greaterThanOrEqual" secondItem="epC-Fs-Q5Z" secondAttribute="bottom" constant="20" id="sRp-6V-ace"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

@@ -93,19 +93,15 @@ The following **stretch** features are implemented:
 - [ ] User can tap the profile image in any tweet to see another user's profile. (1pt)
 - Contains the user header view: picture and tagline.
 - Contains a section with the users basic stats: # tweets, # following, # followers.
-- [ ] After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network. (1pt)
-- [ ] User can reply to any tweet, and replies should be prefixed with the username and the reply_id should be set when posting the tweet. (2pts)
+- [x] After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network. (1pt)
+- [x] User can reply to any tweet, and replies should be prefixed with the username and the reply_id should be set when posting the tweet. (2pts)
 - [ ] User sees embedded images in tweet if available. (3pts)
 - [ ] Pulling down the profile page should blur and resize the header image. (2pts)
 
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
-
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. How to programatically build views and autocontraints.
+2. How to interact with core data.
 
 ## Video Walkthrough
 
@@ -117,11 +113,11 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The biggest challenge while developing the app was that I changed by user model while developing the app. This caused by cached user model to be incompatible with the new model. This casued several optional issues when unwrapping values that were not saved in the cached user model.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2018] [Harjas Monga]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
